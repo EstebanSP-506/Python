@@ -1,0 +1,36 @@
+#Wrapper {
+    width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    display: block;
+    border: 2px dashed blue;
+}
+select{
+    min-width: -webkit-fill-available;
+}
+div>form{
+    width: 500px;
+    margin: 50px auto;
+    text-align: justify;
+}
+.td-2-centered{
+    text-align: center;
+}
+.Centered{
+    display:block;
+    margin: 10px auto;
+}
+form>label{
+    display: block;
+}
+table {
+    margin: 0px auto;
+    text-align: justify;
+}
+td {
+    width: 150px;
+}
+.error{
+    color: red;
+    list-style-position: inside;
+}

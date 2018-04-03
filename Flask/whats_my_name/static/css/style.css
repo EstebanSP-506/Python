@@ -1,0 +1,15 @@
+#Wrapper {
+    width: 800px;
+    margin: 200px auto;
+    text-align: center;
+    display: block;
+}
+h1, p{
+    text-align: center;
+    color: blue;
+}
+
+div>form{
+    margin: 10px 200px 10px 200px;
+}
+

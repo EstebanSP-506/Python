@@ -1,0 +1,31 @@
+Run the following commands:
+
+pip install Django==1.11.9
+
+--this installs Django version 1.11.9 specifically
+
+pip list
+
+--list of installed pip modules
+
+pip install Django==1.11.9 (We know you already ran this one. What information do you see returned in terminal after this command?)
+
+-- if the version were different, this would replace old version with the one indicated
+
+pip freeze (What's the difference between freeze and list?)
+
+--will output a list of installed packages and their versions. It also allows you to write those packages to a file that can later be used to set up a new environment.
+
+First cd into your Desktop directory (cd ~/Desktop), then run this command: pip freeze > requirements.txt. What do you see when you ls? What's inside this file?
+
+--- it generates file requirements.txt including current
+
+pip uninstall Django
+
+-uninstalls Django
+
+pip show Django
+
+pip search Flask. This one might take a moment to execute.
+
+---search for all PyPI packages whose name or summary contains "Flask" and list them

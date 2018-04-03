@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Color Picker</title>
+    <style>
+        body{
+            align-content: center;
+            background-color: rgb({{red}}, {{green}}, {{blue}});
+
+        }
+        table{
+            width: 350px;
+        }
+        td{
+            min-width: 100px;
+            max-width: 250px;
+        }
+        form{
+            width: 350px;
+            margin: 50px auto;
+        }
+        form>input:last-child{
+            margin-right: 0px;
+        }
+        p{
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="/" method="post">
+    <h2>Enter your color values below:</h2>
+    <table>
+        <tr>
+            <td>Red:</td>
+            <td><input type"text" name="red"></td>
+        </tr>
+        <tr>
+            <td>Green:</td>
+            <td><input type"text" name="green"></td>
+        </tr>
+        <tr>
+            <td>Blue:</td>
+            <td><input type"text" name="blue"></td>
+        </tr>
+    </table>
+    <p>* All Values Must Be Between 1 and 255</p>
+    <p>Otherwise, background will be white.</p>
+    <input type="submit" value="Show My Color!">
+    </form>
+</body>
+</html>

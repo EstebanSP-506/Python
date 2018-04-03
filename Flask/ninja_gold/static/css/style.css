@@ -1,0 +1,43 @@
+#wrapper {
+    background: rgb(225, 225, 225);
+    width: 990px;
+    padding:10px;
+    margin: 5px auto;
+}
+#wrapper>label{
+    margin-left: 15px;
+}
+h1{
+    text-align: center;
+
+}
+#results>p{
+    display: inline-block;
+    margin-left: 15px;
+}
+#results{
+    text-align: left;
+}
+#output{
+    border: 2px solid black;
+    height: 200px;
+    width: 960px;
+    margin: 10px auto;
+    overflow-y: scroll;;
+    background: white;
+}
+.win{
+    color: lightgreen;
+}
+.lost{
+    color:red;
+}
+.moneymakers{
+    display: inline-block;
+    text-align: center;
+    background: white;
+    border: 2px solid #000000;
+    margin: 10px;
+    width: 200px;
+    padding: 0px 10px 20px 10px;
+}

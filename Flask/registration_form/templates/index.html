@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Registration Form With Validation</title>
+</head>
+<body>
+    <div id="Wrapper">
+        <form action="/result" method="post">
+            
+            <table>
+                <tr>
+                    <td class='td-2-centered' colspan=2>
+                        <h1>Registration Form</h1>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="name">Email Address:</td>
+                    <td><input type="text" name='email'></label></td>
+                </tr>
+                <tr>
+                    <td><label for="name">First Name:</td>
+                    <td><input type="text" name='first_name'></label></td>
+                </tr>
+                <tr>
+                    <td><label for="name">Last Name:</td>
+                    <td><input type="text" name='last_name'></label></td>
+                </tr>
+                <tr>
+                    <td><label for="location">Password:</label></td>
+                    <td><input type="text" name='name'></label></td>
+                </tr>
+                <tr>
+                    <td><label>Password Confirmation</label></td>
+                    <td><input type="text" name='name'></label></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label for="comments">*Comment (1-120 characters): </label>
+                    </td>
+                </tr>
+            </table>
+            <textarea  class="Centered"  name="comments" id="comments" cols="50" rows="10"></textarea>
+            <input class="Centered" type='submit'>
+        </form>
+        {% with messages = get_flashed_messages(with_categories=true)  %}
+            {% if messages %}
+            <ul>
+                {% for category, message in messages %}
+                <li class={{category}}>{{message}}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        {% endwith %}
+    </div>  
+</body>
+</html>
