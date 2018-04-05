@@ -1,16 +1,46 @@
+body{
+    background: black;
+}
+header{
+    background-color: #ffffff8f;
+    padding: 10px;
+    width: 900px;
+    margin: 0px auto;
+}
+header>div{
+    vertical-align: top;
+    width: 49.5%;
+    display: inline-block;
+    margin: 0px;
+    color: black;
+    font-weight: bold;
+}
+.header-left{
+    text-align: left;
+}
+.header-right{
+    text-align: right;
+}
+
+/* MAIN PAGE CSS */
+
 #wrapper {
     width: 900px;
     margin: 0px auto;
     text-align: center;
     display: block;
-    border: 2px dashed blue;
+    border: 2px solid darkgray;
+    background-image: url(../img/brick.jpg);
+    background-repeat: repeat;
 }
 #errorsBox{
     width: 900px;
     text-align: center;
-    margin: 50px auto 0px;
+    margin: auto;
     display: block;
-    border: 2px dashed red;
+    background-color: #ffffff8f;
+    border: 1px solid darkgray;
+    font-weight: bold;
 }
 ul{
     list-style: inside;
@@ -25,34 +55,107 @@ ul{
     min-width: 170px;
 }
 .error{
-    color: red;
+    color: rgb(243, 23, 23);
 }
 .warning{
     color: yellow;
 }
-div>form{
+#wrapper>div>form{
     margin: 50px auto;
     text-align: center;
-
+    
 }
-h1{
+#wrapper>div>form h1{
     margin: 10px auto;
     text-align: center;
 }
-th {
-    border: 3px solid black;
-}
-td{
-    border: 2px solid black;
-}
 
-form>label{
+#wrapper>div>form>label{
     display: block;
 }
-table {
+#wrapper>div>form table {
     margin: 0px auto;
     text-align: center;
 }
-td {
+#wrapper>div>form td {
     width: 150px;
+}
+#wrapper>div>form th {
+    border: 3px solid black;
+}
+#wrapper>div>form td{
+    border: 2px solid black;
+    background-color: #ffffff8f;
+    font-weight: bold;
+}
+
+/* WALL CSS */
+
+#wallWrapper{
+    width: 900px;
+    margin: 0px auto;
+    background-image: url(../img/brick.png);
+    /* background-image: url(../img/brick.jpg); */
+    background-repeat: repeat;
+    /* text-align: center; */
+    display: block;
+    border: 3px solid gray;
+    padding: 10px;
+}
+#add_message{
+    width: 80%;
+    background-color: #ffffff8f;    
+    padding: 15px;
+    margin: 15px auto 10px;
+}
+#add_comment{
+    width: 80%;
+    background-color: #ffffff8f;    
+    padding: 10px;
+    margin: 15px;
+}
+#add_message input[type="submit"] {
+    margin-left: 50px;
+    border-radius: 15px;   
+    display: block;
+    background: saddlebrown;
+    border: 2px solid black;
+}
+#add_comment input[type="submit"] {
+    margin-left: 40px;
+    border-radius: 15px;   
+    display: block;
+    background: burlywood;
+    border: 2px solid brown;
+}
+input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
+    background-color: lightblue;
+}
+#messages {
+    width: 80%;
+    margin: 25px auto 50px;
+}
+.message-container{
+    width:75%;
+    background-color: #ffffff8f;
+    border: 1px solid black;
+    margin-bottom: 10px;
+}
+.comment-container{
+    margin-left: 50px;
+    margin-bottom: 5px;
+    width:55%;    
+    background-color: #ffffff8f;
+    border: 1px solid black;
+}
+
+.message-container>p, .comment-container>p{
+    color: #000000;
+    font-weight: bold;
+    margin-left: 15px;
+}
+.message-container>h3, .comment-container>h4{
+    color: #000000;
+    font-weight: bold;
+    margin-left: 5px;
 }

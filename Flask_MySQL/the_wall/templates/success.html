@@ -12,12 +12,13 @@
 <body>
     <div id="wrapper">
         <h1>{{session['success']}}</h1>
+        {% if userdata%}
         <ul>
             {% for user in userdata%} {% for key,value in user.items()%}
             <li>{{key}}: {{value}}</li>
             {% endfor %} {% endfor %}
         </ul>
-        {% if session['success']%}
+        {% endif %} {% if session['success']%}
         <a href="/logout">click to log out</a>
         {% endif %}
     </div>

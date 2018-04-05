@@ -12,7 +12,7 @@ EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
 @app.route('/')
 def index():
-    if session.get('logged') == True:
+    if session.get('logged'):
         return redirect('/success')
     return render_template('index.html')
 
@@ -88,8 +88,8 @@ def register():
         # Run query, with dictionary values injected into the query.
         mysql.query_db(query, data)
         session['success'] = 'Successfully registered your user!'
-        session['logged'] = user[0]['id']
-        return redirect('/success')
+        session['logged'] = mysql.query_db(query, data)
+        return redirect('/wall')
     return redirect('/')
 
 
@@ -106,8 +106,10 @@ def login():
             session['success'] = 'Successfully logged in!!'
             print "success!!"
             # this means we have a successful login!
+            print user[0]['id']
             session['logged'] = user[0]['id']
-            return redirect('/success')
+            print session['logged']
+            return redirect('/wall')
         else:
             print 'wrong email'
             flash('Wrong credentials', category='error')
@@ -121,19 +123,48 @@ def login():
     return redirect('/')
 
 
-@app.route('/success')
-def success():
-    if session.get('logged') == True:
-        user_query = "SELECT id, CONCAT(first_name,' ',last_name) as Name, email FROM users WHERE users.id = :id LIMIT 1"
+@app.route('/wall')
+def the_wall():
+    if session.get('logged'):
+        user_query = "SELECT id, CONCAT(first_name,' ',last_name) AS name, email FROM users WHERE users.id = :id LIMIT 1"
         query_data = {'id': session['logged']}
-        return render_template('success.html', userdata=mysql.query_db(user_query, query_data))
+        userdata = mysql.query_db(user_query, query_data)
+        userdata = userdata[0]
+        messages_query = "SELECT CONCAT(users.first_name,' ',users.last_name) AS name, messages.message, messages.id, messages.created_at FROM users JOIN messages ON users.id = messages.user_id;"
+        messages = mysql.query_db(messages_query)
+        comments_query = "SELECT CONCAT(users.first_name,' ', users.last_name) AS name, comments.comment, comments.message_id, comments.created_at FROM users JOIN comments ON users.id = comments.user_id"
+        comments = mysql.query_db(comments_query)
+        return render_template('the_wall.html', userdata=userdata, comments=comments, messages=messages)
     flash('You are not logged in yet! Please register or login using your credentials!', category='error')
     return redirect('/')
 
 
+@app.route('/add_message', methods=['POST'])
+def add_message():
+    query = "INSERT INTO messages (user_id, message, updated_at) VALUES (:user_id, :message, NOW())"
+    data = {
+        'user_id': session['logged'],
+        'message': request.form['new_message'],
+    }
+    mysql.query_db(query, data)
+    return redirect('/wall')
+
+
+@app.route('/add_comment', methods=['POST'])
+def add_comment():
+    query = "INSERT INTO comments (message_id, user_id, comment, updated_at) VALUES (:mess_id, :user_id, :comment, NOW())"
+    data = {
+        'mess_id': request.form['message_id'],
+        'user_id': session['logged'],
+        'comment': request.form['new_comment'],
+    }
+    mysql.query_db(query, data)
+    return redirect('/wall')
+
+
 @app.route('/logout')
 def logout():
-    session.pop('logged')
+    session.clear()
     return redirect('/')
 
 
