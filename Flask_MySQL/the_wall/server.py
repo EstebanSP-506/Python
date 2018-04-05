@@ -27,10 +27,9 @@ def register():
     elif len(request.form['first_name']) < 2:
         flash("First name cannot be less than 2 characters!", category='error')
         errors += 1
-    elif len(request.form['first_name']) >= 2:
-        if not request.form['first_name'].isalpha():
-            flash("First name can only be letters!", category='error')
-            errors += 1
+    elif not request.form['first_name'].isalpha():
+        flash("First name can only be letters!", category='error')
+        errors += 1
 
     if len(request.form['last_name']) == 0:
         flash("Last name cannot be empty!", category='error')
@@ -38,10 +37,9 @@ def register():
     elif len(request.form['last_name']) < 2:
         flash("Last name cannot be less than 2 characters!", category='error')
         errors += 1
-    elif len(request.form['last_name']) >= 2:
-        if not request.form['last_name'].isalpha():
-            flash("Last name can only be letters!", category='error')
-            errors += 1
+    elif not request.form['last_name'].isalpha():
+        flash("Last name can only be letters!", category='error')
+        errors += 1
 
     if len(request.form['email']) < 1:
         flash("Email cannot be empty!", category='error')
@@ -53,10 +51,9 @@ def register():
     if len(request.form['password']) < 8:
         flash("Password must be at least 8 characters!", category='error')
         errors += 1
-    elif len(request.form['password']) >= 8:
-        if request.form['password'] != request.form['pwd_confirmation']:
-            flash("Password and Password Confirmation must match!", category='error')
-            errors += 1
+    elif request.form['password'] != request.form['pwd_confirmation']:
+        flash("Password and Password Confirmation must match!", category='error')
+        errors += 1
 
     if errors > 0:
         return redirect('/')
@@ -86,9 +83,8 @@ def register():
         }
         print data
         # Run query, with dictionary values injected into the query.
-        mysql.query_db(query, data)
-        session['success'] = 'Successfully registered your user!'
         session['logged'] = mysql.query_db(query, data)
+        session['success'] = 'Successfully registered your user!'
         return redirect('/wall')
     return redirect('/')
 
@@ -111,7 +107,7 @@ def login():
             print session['logged']
             return redirect('/wall')
         else:
-            print 'wrong email'
+            print 'wrong password'
             flash('Wrong credentials', category='error')
             return redirect('/')
             # invalid password!
