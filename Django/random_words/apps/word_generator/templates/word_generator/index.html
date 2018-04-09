@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'word_generator/css/main.css' %}" media="screen" title="no title" charset="utf-8">
+    <title>Welcome to the "Word" Generator</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <h1>Welcome to the "Word" Generator</h1>
+        <div id="word">
+            {{word}}
+        </div>
+        <p>(attemp # {{counter}})</p>
+        <a href="/random_word">
+            <button>New Random Word</button>
+        </a>
+        <a href="/random_word/reset">
+            <button>Reset Counter</button>
+        </a>
+    </div>
+</body>
+
+</html>

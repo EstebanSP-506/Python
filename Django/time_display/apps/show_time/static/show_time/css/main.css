@@ -1,0 +1,13 @@
+#top{
+    width: 200px;
+    border: 2px solid black;
+    text-align: center;
+    margin: 50px auto;
+}
+
+#time_wrapper{
+    width: 600px;
+    border: 2px solid black;
+    text-align: center;
+    margin: 50px auto;
+}

@@ -1,0 +1,9 @@
+from django.conf.urls import url
+from . import views
+
+urlpatterns = [
+
+    url(r'^', views.index),     # This line has changed!
+    url(r'^time_display$', views.index)     # This line has changed!
+
+]

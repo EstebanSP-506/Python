@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'surveys/css/main.css' %}" media="screen" title="no title" charset="utf-8">
+    <title>Survey Results</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="survey_counter">
+            <p>Thank you for submitting the form! </p>
+            <p> You have usbmitter this form {{ request.session.counter }} times now.</p>
+        </div>
+        <table>
+            <h2>Submitted Information</h2>
+            <tr>
+                <td>Name:</td>
+                <td>{{ request.session.name }}</td>
+            </tr>
+            <tr>
+                <td>Dojo Location:</td>
+                <td>{{ request.session.location }}</td>
+            </tr>
+            <tr>
+                <td>Favorite Language</td>
+                <td>{{ request.session.language }}</td>
+            </tr>
+            <tr>
+                <td>Comment:</td>
+                <td>{{ request.session.comments }}</td>
+            </tr>
+        </table>
+        <a href="/">
+            <button>Go Back</button>
+        </a>
+        <a href="/survey/reset">
+            <button type="reset">Reset Counter</button>
+        </a>
+    </div>
+</body>
+
+</html>

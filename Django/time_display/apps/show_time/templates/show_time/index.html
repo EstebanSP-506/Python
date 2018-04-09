@@ -1,0 +1,25 @@
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="iSe=edge">
+    <link rel="stylesheet" href="{% static 'show_time/css/main.css' %}" media="screen" title="no title" charset="utf-8">
+    <title>Time Display</title>
+</head>
+
+<body>
+    <div id="top">
+        <h4>Current time and date:</h4>
+    </div>
+    <div id="time_wrapper">
+        <h1>{{date}}</h1>
+        <h1>{{time}}</h1>
+
+    </div>
+
+</body>
+
+</html>

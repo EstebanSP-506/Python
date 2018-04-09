@@ -1,0 +1,16 @@
+#wrapper{
+    border: 2px dashed red;
+    width: 500px;
+    margin: 50px auto;
+    text-align: center;
+    background: whitesmoke;
+    padding: 15px;
+}
+#word{
+    margin: 5px auto;
+    background: white;
+    max-width: 300px;
+    min-width: 150px;
+    width: 200px;
+    border: 1px solid black;
+}
