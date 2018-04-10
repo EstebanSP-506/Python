@@ -1,18 +1,18 @@
 cd ~/Documents/'Coding Dojo'/python/django
-django-admin startproject amadon
-mkdir amadon/apps
-touch amadon/apps/__init__.py
-cd amadon/apps
-python ../manage.py startapp store
-touch store/urls.py
-mkdir store/templates
-mkdir store/templates/store
-touch store/templates/store/index.html
-mkdir store/static
-mkdir store/static/store
-mkdir store/static/store/css
-touch store/static/store/css/main.css
-mkdir store/static/store/js
-mkdir store/static/store/img
-python ~/Documents/'Coding Dojo'/python/django/amadon/manage.py migrate
-python ~/Documents/'Coding Dojo'/python/django/amadon/manage.py runserver
+django-admin startproject {{project_name}}
+mkdir {{project_name}}/apps
+touch {{project_name}}/apps/__init__.py
+cd {{project_name}}/apps
+python ../manage.py startapp {{app_name}}
+touch {{app_name}}/urls.py
+mkdir {{app_name}}/templates
+mkdir {{app_name}}/templates/{{app_name}}
+touch {{app_name}}/templates/{{app_name}}/index.html
+mkdir {{app_name}}/static
+mkdir {{app_name}}/static/{{app_name}}
+mkdir {{app_name}}/static/{{app_name}}/css
+touch {{app_name}}/static/{{app_name}}/css/main.css
+mkdir {{app_name}}/static/{{app_name}}/js
+mkdir {{app_name}}/static/{{app_name}}/img
+python ~/Documents/'Coding Dojo'/python/django/{{project_name}}/manage.py migrate
+python ~/Documents/'Coding Dojo'/python/django/{{project_name}}/manage.py runserver
