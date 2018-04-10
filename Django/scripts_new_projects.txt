@@ -1,0 +1,18 @@
+cd ~/Documents/'Coding Dojo'/python/django
+django-admin startproject amadon
+mkdir amadon/apps
+touch amadon/apps/__init__.py
+cd amadon/apps
+python ../manage.py startapp store
+touch store/urls.py
+mkdir store/templates
+mkdir store/templates/store
+touch store/templates/store/index.html
+mkdir store/static
+mkdir store/static/store
+mkdir store/static/store/css
+touch store/static/store/css/main.css
+mkdir store/static/store/js
+mkdir store/static/store/img
+python ~/Documents/'Coding Dojo'/python/django/amadon/manage.py migrate
+python ~/Documents/'Coding Dojo'/python/django/amadon/manage.py runserver

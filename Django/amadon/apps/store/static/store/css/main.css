@@ -1,0 +1,8 @@
+#wrapper{
+    width: 600px;
+    margin: 50px auto;
+}
+.quantity{
+    max-width: fit-content;
+    text-align: center;
+}

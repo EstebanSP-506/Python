@@ -1,0 +1,50 @@
+#wrapper{
+    width: 1200px;
+    padding: 10px;
+    border: 2px dashed red;
+    margin: 40px auto;
+}
+#wrapper>div{
+    width: 49%;
+    height: 350px;
+    display: inline-block;
+    border: 2px dashed blue;
+    vertical-align: top;
+}
+#left-side>form{
+    width: 300px;
+    margin: 60px auto;
+}
+#right-side{
+    overflow-y: scroll;
+}
+#right-side>a{
+    background-color:#ddd;
+    position: fixed;
+    padding: 2em;
+    right: 5%;
+    top: 5%;
+}
+#words_wrapper{
+    margin: 5px 
+}
+form>input, form>label {
+    display: block;
+}
+
+form>label>input[type=radio], form>input[type=text]{
+    margin-left: 15px;
+}
+.blue{
+    color: blue
+}
+.green{
+    color: green
+}
+.red{
+    color: red
+}
+.big-font{
+    font-size: 25px;
+    font-weight: bold;
+}
