@@ -15,10 +15,12 @@ def new(request):
 
 
 def create(request):
-    dataPOST = request.POST
-    new_user = User.objects.create(
-        first_name=str(dataPOST['first_name']), last_name=str(dataPOST['last_name']), email=str(dataPOST['email']))
-    return redirect("/users/"+str(new_user.id))
+    if request.method == 'POST'
+        dataPOST = request.POST
+        new_user = User.objects.create(
+            first_name=str(dataPOST['first_name']), last_name=str(dataPOST['last_name']), email=str(dataPOST['email']))
+        return redirect("/users/"+str(new_user.id))
+    return redirect("/users/")
 
 
 def edit(request, user_id):
@@ -32,13 +34,15 @@ def show(request, user_id):
 
 
 def update(request):
-    dataPOST = request.POST
-    user = User.objects.get(id=dataPOST['user_id'])
-    user.first_name = dataPOST['first_name']
-    user.last_name = dataPOST['last_name']
-    user.email = dataPOST['email']
-    user.save()
-    return redirect("/users/"+str(dataPOST['user_id']))
+    if request.method == 'POST'
+        dataPOST = request.POST
+        user = User.objects.get(id=dataPOST['user_id'])
+        user.first_name = dataPOST['first_name']
+        user.last_name = dataPOST['last_name']
+        user.email = dataPOST['email']
+        user.save()
+        return redirect("/users/"+str(dataPOST['user_id']))
+    return redirect("/users/")
 
 
 def destroy(request, user_id):
